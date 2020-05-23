@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { VisitedDepartments } from '../models/visitedDepartments';
-import { Department } from '../models/department';
-import { ActiveEmployees } from '../models/activeEmployees';
+import { IVisitedDepartments } from '../models/visitedDepartments';
+import { IDepartment } from '../models/department';
+import { IActiveEmployees } from '../models/activeEmployees';
 
 
 @Injectable({
@@ -14,13 +14,13 @@ export class HttpApiService {
 
   private baseUrl: string = '';
 
-  public getAllDepartments(): Observable<Department>{
-    return this.http.get<any>(`${this.baseUrl}api/Meeting/getDepartments`); 
+  public getAllDepartments(): Observable<IDepartment[]>{
+    return this.http.get<any>(`${this.baseUrl}api/Common/getDepartments`); 
   }
-  public getMostActiveUsers(): Observable<ActiveEmployees>{
-    return this.http.get<any>(`${this.baseUrl}api/Meeting/getMostActiveEmployees`); 
+  public getMostActiveEmployees(): Observable<IActiveEmployees[]>{
+    return this.http.get<any>(`${this.baseUrl}api/Common/getMostActiveEmployees`); 
   }
-  public getMostVisitedDepartments(): Observable<VisitedDepartments>{
-    return this.http.get<any>(`${this.baseUrl}api/Meeting/getMostVisitedDepartmentsng `); 
+  public getMostVisitedDepartments(): Observable<IVisitedDepartments[]>{
+    return this.http.get<any>(`${this.baseUrl}api/Common/getMostVisitedDepartments `); 
   }
 }

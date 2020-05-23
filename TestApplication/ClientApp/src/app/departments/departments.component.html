@@ -1,1 +1,20 @@
-<h1>Hello, world!</h1>
+<h1 id="tableLabel">All Departments</h1>
+
+<p>Showing All Departments</p>
+
+<p *ngIf="!departments"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="departments">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Department Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of departments">
+      <td>{{ department?.id }}</td>
+      <td>{{ department?.name }}</td>
+    </tr>
+  </tbody>
+</table>

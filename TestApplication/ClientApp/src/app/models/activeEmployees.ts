@@ -1,4 +1,4 @@
-export interface ActiveEmployees {
+export interface IActiveEmployees {
     totalVisits: number;
     firstName: string;
     lastName: string;

@@ -1,4 +1,4 @@
-export interface VisitedDepartments {
+export interface IVisitedDepartments {
     total: number;
     name: string;
 }
