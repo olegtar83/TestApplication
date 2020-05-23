@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{C020C69F-F4A2-40F6-B557-734ACC87C0AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplication", "TestApplication\TestApplication.csproj", "{C020C69F-F4A2-40F6-B557-734ACC87C0AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServices", "TestServices\TestServices.csproj", "{58357428-E867-4593-98A1-F42F97E066C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServices", "TestServices\TestServices.csproj", "{58357428-E867-4593-98A1-F42F97E066C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDAL", "TestDAL\TestDAL.csproj", "{3091EF5A-3431-4FF2-B344-D401D627EDFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDAL", "TestDAL\TestDAL.csproj", "{3091EF5A-3431-4FF2-B344-D401D627EDFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sp", "Sp", "{0DEFBC46-9994-4B40-A317-D8BFCB34C9EC}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\OneDrive\Desktop\GetMostActiveEmployee_Sp.sql = ..\..\..\OneDrive\Desktop\GetMostActiveEmployee_Sp.sql
+		..\..\..\OneDrive\Desktop\GetMostVisitedDepartments_Sp.sql = ..\..\..\OneDrive\Desktop\GetMostVisitedDepartments_Sp.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
