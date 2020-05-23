@@ -1,7 +1,3 @@
-Create database:
-
-CREATE DATABASE JTITestDB;
-
 Create Migrations:
 
 dotnet ef migrations add Init
