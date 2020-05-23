@@ -18,6 +18,40 @@ namespace TestDAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("TestDAL.ComplexTypes.GetMostActiveEmployeesResult", b =>
+                {
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DepartmentName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalVisits")
+                        .HasColumnType("int");
+
+                    b.ToTable("GetMostActiveEmployeesResults");
+                });
+
+            modelBuilder.Entity("TestDAL.ComplexTypes.GetMostVisitedDepartmentsResult", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Total")
+                        .HasColumnType("int");
+
+                    b.ToTable("GetMostVisitedDepartmentsResults");
+                });
+
             modelBuilder.Entity("TestDAL.Models.Departments", b =>
                 {
                     b.Property<int>("Id")
@@ -47,7 +81,7 @@ namespace TestDAL.Migrations
                         new
                         {
                             Id = 3,
-                            Name = "Bussines Development"
+                            Name = "Business Development"
                         },
                         new
                         {

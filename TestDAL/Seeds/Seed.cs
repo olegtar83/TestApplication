@@ -24,7 +24,7 @@ namespace TestDAL.Seed
                 new Departments
                 {
                     Id = 3,
-                    Name = "Bussines Development"
+                    Name = "Business Development"
                 },
                 new Departments
                 {

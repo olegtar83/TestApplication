@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using TestDAL.ComplexTypes;
 using TestDAL.DTO;
 using TestDAL.Models;
 
@@ -11,7 +9,9 @@ namespace TestServices.Helpers
 	{
 		public AutoMapperProfile()
 		{
-			CreateMap<Departments, DepertmentDTO>().ReverseMap();
+			CreateMap<Departments, DepartmentDTO>();
+			CreateMap<GetMostActiveEmployeesResult, MostActiveEmployeesDTO>();
+			CreateMap<GetMostVisitedDepartmentsResult, MostVisitedDepartmentsDTO>();
 		}
 	}
 }

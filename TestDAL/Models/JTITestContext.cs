@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using TestDAL.ComplexTypes;
 using TestDAL.Seed;
 
 namespace TestDAL.Models
@@ -20,6 +21,11 @@ namespace TestDAL.Models
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Visits> Visits { get; set; }
 
+        public virtual DbQuery<GetMostActiveEmployeesResult> GetMostActiveEmployeesResults { get; set; }
+
+        public virtual DbQuery<GetMostVisitedDepartmentsResult> GetMostVisitedDepartmentsResults { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -30,6 +36,8 @@ namespace TestDAL.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<GetMostVisitedDepartmentsResult>().HasNoKey();
+            modelBuilder.Entity<GetMostActiveEmployeesResult>().HasNoKey();
             modelBuilder.Entity<Departments>(entity =>
             {
                 entity.Property(e => e.Name).HasMaxLength(50);

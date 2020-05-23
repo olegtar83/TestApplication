@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using TestDAL.ComplexTypes;
 using TestDAL.Models;
 
 namespace TestDAL.Repositories
@@ -17,9 +20,15 @@ namespace TestDAL.Repositories
 
 		public async Task<IEnumerable<Departments>> GetAllDepartments()
 		{
-			return await Task.Run(
-					() => _context.Departments
-				).ConfigureAwait(false);
+			return await _context.Departments.ToListAsync();
+		}
+		public async Task<IEnumerable<GetMostActiveEmployeesResult>> GetMostActiveEmployes()
+		{
+			return await _context.GetMostActiveEmployeesResults.FromSqlRaw("GetMostActiveEmployees").ToListAsync();						
+		}
+		public async Task<IEnumerable<GetMostVisitedDepartmentsResult>> GetMostVisitedDepartments()
+		{
+			return await _context.GetMostVisitedDepartmentsResults.FromSqlRaw("GetMostVisitedDepartments").ToListAsync();
 		}
 	}
 }

@@ -20,9 +20,9 @@ namespace TestApplication.Controllers
             _repoServices = repoServices;
         }
 
-        // GET: api/Common/
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<DepertmentDTO>>> GetDepartments()
+        // GET: api/Common/getDepartments
+        [HttpGet,Route("getDepartments")]
+        public async Task<ActionResult<IEnumerable<DepartmentDTO>>> GetDepartments()
         {
             try
             {
@@ -37,8 +37,45 @@ namespace TestApplication.Controllers
                     title = ex.Message
                 });
             }
+        }
+        // GET: api/Common/getMostVisitedDepartments
+        [HttpGet, Route("getMostVisitedDepartments")]
+        public async Task<ActionResult<IEnumerable<MostVisitedDepartmentsDTO>>> GetMostVisitedDepartments()
+        {
+            try
+            {
+                var result = await _repoServices.GetMostVisitedDepartments();
+                return new OkObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    code = 400,
+                    title = ex.Message
+                });
+            }
+        }
 
+    // GET: api/Common/getMostActiveEmployees
+    [HttpGet, Route("getMostActiveEmployees")]
+        public async Task<ActionResult<IEnumerable<MostActiveEmployeesDTO>>> GetMostActiveEmployees()
+        {
+            try
+            {
+                var result = await _repoServices.GetMostActiveEmployees();
+                return new OkObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    code = 400,
+                    title = ex.Message
+                });
+            }
         }
 
     }
 }
+
