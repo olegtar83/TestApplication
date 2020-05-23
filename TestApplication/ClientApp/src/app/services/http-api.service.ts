@@ -34,7 +34,7 @@ export class HttpApiService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(error.error.title); // log to console instead
+      console.log(error.error.title); // log to console instead
 
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.title}`);
