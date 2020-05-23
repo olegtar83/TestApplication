@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using TestDAL.ComplexTypes;
 using TestDAL.DTO;
-using TestDAL.Models;
 using TestDAL.Repositories;
 
 namespace TestServices
